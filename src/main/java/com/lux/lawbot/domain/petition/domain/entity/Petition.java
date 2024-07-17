@@ -1,11 +1,13 @@
 package com.lux.lawbot.domain.petition.domain.entity;
 
-import com.lux.lawbot.domain.user.domain.entity.user.User;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -29,18 +31,22 @@ public class Petition {
     private String contents;
 
     /*
+        작성일
+    */
+    @Column
+    private LocalDateTime petitionDate;
+
+    /*
         좋아요
     */
     @Column
     private Long likes;
 
-    public static Petition postPetition(
-            String title,
-            String contents) {
-        Petition petition = new Petition();
-        petition.title = title;
-        petition.contents = contents;
-
-        return petition;
+    @Builder
+    public Petition(String title, String contents, LocalDateTime petitionDate, Long likes) {
+        this.title = title;
+        this.contents = contents;
+        this.petitionDate = petitionDate;
+        this.likes = likes;
     }
 }
