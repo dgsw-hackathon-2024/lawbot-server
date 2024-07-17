@@ -40,7 +40,7 @@ public class Petition {
     /*
         좋아요
     */
-    @Column(columnDefinition = "BIGINT default 0")
+    @Column
     private Long likes;
 
     @Builder
