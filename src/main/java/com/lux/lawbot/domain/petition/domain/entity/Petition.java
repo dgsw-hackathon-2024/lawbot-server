@@ -34,7 +34,7 @@ public class Petition {
         작성일
     */
     @Column
-    private LocalDateTime petitionDate;
+    private LocalDateTime createdAt;
 
     /*
         좋아요
@@ -43,10 +43,10 @@ public class Petition {
     private Long likes;
 
     @Builder
-    public Petition(String title, String contents, LocalDateTime petitionDate, Long likes) {
+    public Petition(String title, String contents, LocalDateTime createdAt, Long likes) {
         this.title = title;
         this.contents = contents;
-        this.petitionDate = petitionDate;
+        this.createdAt = createdAt;
         this.likes = likes;
     }
 }
