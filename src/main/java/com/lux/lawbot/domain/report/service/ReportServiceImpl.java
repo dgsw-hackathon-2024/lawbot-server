@@ -24,7 +24,7 @@ public class ReportServiceImpl implements ReportService {
 
     @Override
     public BaseResponse findAllReports() {
-        List<Report> reports = reportRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
+        List<Report> reports = reportRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
         List<ReportResponse> dtos = reportMapper.convertPetitionToDtos(reports);
         return new BaseResponse(HttpStatus.OK, "모든 신고 불러오기 성공", dtos);
     }
