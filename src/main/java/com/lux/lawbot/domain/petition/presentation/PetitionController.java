@@ -33,4 +33,16 @@ public class PetitionController {
     public BaseResponse petitionRead(@PathVariable("id") Long id){
         return petitionService.petitionRead(id);
     }
+
+    @Operation(summary = "좋아요", description = "좋아요를 +1 추가합니다.")
+    @PostMapping("/likes/{id}")
+    public BaseResponse likePost(@PathVariable("id") Long id){
+        return petitionService.like(id);
+    }
+
+    @Operation(summary = "좋아요 제거", description = "좋아요를 1 제거합니다.")
+    @PostMapping("/unlikes/{id}")
+    public BaseResponse dislikePost(@PathVariable("id") Long id){
+        return petitionService.unlike(id);
+    }
 }
