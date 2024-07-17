@@ -50,4 +50,12 @@ public class Petition {
         this.createdAt = createdAt;
         this.likes = likes;
     }
+
+    public void like() {
+        likes += 1;
+    }
+
+    public void unlike() {
+        likes -= 1;
+    }
 }
