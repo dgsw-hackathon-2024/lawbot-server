@@ -7,4 +7,6 @@ public interface PetitionService {
     BaseResponse findAllPetitions();
     BaseResponse petitionCreate(PetitionDto petitionDto);
     BaseResponse petitionRead(Long id);
+    BaseResponse like(Long id);
+    BaseResponse unlike(Long id);
 }

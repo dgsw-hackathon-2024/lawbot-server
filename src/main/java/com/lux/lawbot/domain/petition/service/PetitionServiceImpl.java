@@ -39,4 +39,20 @@ public class PetitionServiceImpl implements PetitionService {
         Petition petition = petitionRepository.findById(id).orElseThrow(PetitionException::notFoundPetition);
         return new BaseResponse(HttpStatus.OK, "청원 단일 조회 성공", petitionMapper.entityToDto(petition));
     }
+
+    @Override
+    public BaseResponse like(Long id) {
+        Petition likes = petitionRepository.findById(id).get();
+        likes.like();
+        petitionRepository.save(likes);
+        return new BaseResponse(HttpStatus.OK, "좋아요 +1 성공", likes.getLikes());
+    }
+
+    @Override
+    public BaseResponse unlike(Long id) {
+        Petition likes = petitionRepository.findById(id).get();
+        likes.unlike();
+        petitionRepository.save(likes);
+        return new BaseResponse(HttpStatus.OK, "좋아요 -1 성공",likes.getLikes());
+    }
 }
