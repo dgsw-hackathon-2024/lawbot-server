@@ -25,7 +25,8 @@ public class PetitionMapper {
         return Petition.builder()
                 .title(dto.title())
                 .contents(dto.contents())
-                .likes(dto.likes())
+                .createdAt(LocalDateTime.now())
+                .likes(0L)
                 .build();
     }
 
