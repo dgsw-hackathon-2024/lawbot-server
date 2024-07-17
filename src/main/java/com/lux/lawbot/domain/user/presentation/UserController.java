@@ -1,4 +1,4 @@
-package com.lux.lawbot.domain.user.controller;
+package com.lux.lawbot.domain.user.presentation;
 
 import com.lux.lawbot.domain.user.payload.request.LoginRequest;
 import com.lux.lawbot.domain.user.payload.request.SignupRequest;
