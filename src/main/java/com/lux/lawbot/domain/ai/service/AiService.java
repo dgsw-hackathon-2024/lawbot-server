@@ -39,8 +39,7 @@ public class AiService {
                         "- 의대 증원을 위한 교육 인프라 확충 및 유지에\n" +
                         "- 상당한 비용이 들 수 있습니다.\n" +
                         "\n" +
-                        "답변은 예시와 같이 마크다운 문법으로 반환해야 하고, 질문은 {question} 이야." +
-                        "{quesitonData}를 포함하면 안돼"
+                        "답변은 예시와 같이 마크다운 문법으로 반환해야 하고, 질문은 {question} 이야."
         );
 
         Prompt prompt = promptTemplate.create(Map.of("question", message));
